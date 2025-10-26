@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Input, Select, Card, Avatar, Badge } from "antd";
+import { Input, Select, Card, Avatar } from "antd";
 import Image from "next/image";
+import Link from "next/link";
 import {
   SearchOutlined,
   EnvironmentOutlined,
@@ -47,7 +48,8 @@ const mockTrips: Trip[] = [
     price: 1200,
     likes: 342,
     comments: 56,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
   },
   {
     id: 2,
@@ -63,7 +65,8 @@ const mockTrips: Trip[] = [
     price: 1500,
     likes: 428,
     comments: 78,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&h=400&fit=crop",
   },
   {
     id: 3,
@@ -79,7 +82,8 @@ const mockTrips: Trip[] = [
     price: 950,
     likes: 312,
     comments: 45,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=400&fit=crop",
   },
   {
     id: 4,
@@ -95,7 +99,8 @@ const mockTrips: Trip[] = [
     price: 1800,
     likes: 521,
     comments: 92,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
   },
   {
     id: 5,
@@ -111,7 +116,8 @@ const mockTrips: Trip[] = [
     price: 2200,
     likes: 456,
     comments: 67,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&h=400&fit=crop",
   },
   {
     id: 6,
@@ -127,7 +133,8 @@ const mockTrips: Trip[] = [
     price: 2800,
     likes: 389,
     comments: 54,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
   },
   {
     id: 7,
@@ -143,7 +150,8 @@ const mockTrips: Trip[] = [
     price: 2400,
     likes: 402,
     comments: 61,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1499678329028-101435549a4e?w=600&h=400&fit=crop",
   },
   {
     id: 8,
@@ -159,7 +167,8 @@ const mockTrips: Trip[] = [
     price: 1900,
     likes: 398,
     comments: 48,
-    image: "/cover.jpg",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
   },
 ];
 
@@ -215,7 +224,7 @@ export default function ExplorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen max-w-[1600px]   mx-auto bg-white p ">
       <HeroSection title="Explore Trips" breadcrumb="Home > Explore Trips" />
 
       {/* Search and Filter Section */}
@@ -276,80 +285,80 @@ export default function ExplorePage() {
       </div>
 
       {/* Trip Listings */}
-      <div className="bg-gray-50 py-12">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-gray-50 pt-12 pb-20">
+        <div className=" px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredTrips.map((trip) => (
-              <Card
-                key={trip.id}
-                hoverable
-                className="rounded-lg overflow-hidden border-gray-200 shadow-sm hover:shadow-lg transition-shadow"
-                cover={
-                  <div className="relative h-48 bg-gray-200">
-                    <Image
-                      src={trip.image}
-                      alt={trip.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <Badge
-                      count={trip.duration}
-                      className="absolute top-2 right-2 bg-blue-600"
-                    />
-                  </div>
-                }
-              >
-                <Card.Meta
-                  description={
-                    <div className="space-y-3">
-                      {/* Guide Info */}
-                      <div className="flex items-center gap-2">
-                        <Avatar
-                          size={24}
-                          icon={<UserOutlined />}
-                          src={trip.guide.avatar}
-                        />
-                        <span className="text-sm font-medium text-gray-700">
-                          {trip.guide.name}
-                        </span>
-                      </div>
-
-                      {/* Location */}
-                      <div className="flex items-center gap-1 text-sm text-gray-500">
-                        <EnvironmentOutlined />
-                        <span>{trip.location}</span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="font-bold text-lg text-gray-900 line-clamp-1">
-                        {trip.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm text-gray-600 line-clamp-2">
-                        {trip.description}
-                      </p>
-
-                      {/* Engagement & Price */}
-                      <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-                        <div className="flex items-center gap-4 text-sm text-gray-500">
-                          <div className="flex items-center gap-1">
-                            <HeartOutlined />
-                            <span>{trip.likes}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MessageOutlined />
-                            <span>{trip.comments}</span>
-                          </div>
-                        </div>
-                        <span className="text-lg font-bold text-blue-600">
-                          ${trip.price}
-                        </span>
+              <Link key={trip.id} href={`/explore/${trip.id}`}>
+                <Card
+                  hoverable
+                  className="rounded-lg overflow-hidden border-gray-200 shadow-sm hover:shadow-lg transition-shadow"
+                  cover={
+                    <div className="relative h-48 bg-gray-200">
+                      <Image
+                        src={trip.image}
+                        alt={trip.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
+                        {trip.duration}
                       </div>
                     </div>
                   }
-                />
-              </Card>
+                >
+                  <Card.Meta
+                    description={
+                      <div className="space-y-3">
+                        {/* Guide Info */}
+                        <div className="flex items-center gap-2">
+                          <Avatar
+                            size={24}
+                            icon={<UserOutlined />}
+                            src={trip.guide.avatar}
+                          />
+                          <span className="text-sm font-medium text-gray-700">
+                            {trip.guide.name}
+                          </span>
+                        </div>
+
+                        {/* Location */}
+                        <div className="flex items-center gap-1 text-sm text-gray-500">
+                          <EnvironmentOutlined />
+                          <span>{trip.location}</span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="font-bold text-lg text-gray-900 line-clamp-1">
+                          {trip.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-gray-600 line-clamp-2">
+                          {trip.description}
+                        </p>
+
+                        {/* Engagement & Price */}
+                        <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                          <div className="flex items-center gap-4 text-sm text-gray-500">
+                            <div className="flex items-center gap-1">
+                              <HeartOutlined />
+                              <span>{trip.likes}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <MessageOutlined />
+                              <span>{trip.comments}</span>
+                            </div>
+                          </div>
+                          <span className="text-lg font-bold text-blue-600">
+                            ${trip.price}
+                          </span>
+                        </div>
+                      </div>
+                    }
+                  />
+                </Card>
+              </Link>
             ))}
           </div>
 

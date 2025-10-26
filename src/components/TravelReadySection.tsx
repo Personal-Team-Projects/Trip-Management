@@ -8,6 +8,8 @@ import {
 } from "@ant-design/icons";
 import Image from "next/image";
 
+import { travelReady } from "../../public/allImage";
+
 export default function TravelReadySection() {
   return (
     <div className="w-full bg-gray-50 py-20 px-6">
@@ -18,8 +20,8 @@ export default function TravelReadySection() {
             {/* Top Image */}
             <div className="absolute top-8 left-8  -transparent overflow-hidden   z-10 transform   transition-transform">
               <Image
-                src="/home/travelReady.png"
-                alt="Mountain hiking"
+                src={travelReady}
+                alt="Travel Ready"
                 className="w-full h-full object-cover"
                 width={654}
                 height={650}
