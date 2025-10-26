@@ -291,7 +291,6 @@ export default function ExplorePage() {
                       alt={trip.title}
                       fill
                       className="object-cover"
-                      fallback="/cover.jpg"
                     />
                     <Badge
                       count={trip.duration}
