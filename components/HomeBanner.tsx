@@ -2,26 +2,29 @@
 
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 export default function HomeBanner() {
   return (
     <div className="relative h-[600px] md:h-[700px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80"
+        <Image
+          src="/home/homeBanner.png"
           alt="Tropical Paradise"
           className="w-full h-full object-cover"
+          width="2000"
+          height="1000"
         />
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent" />
+      <div className="absolute inset-0 bg-[#0D0D0C80]" />
 
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <div className="max-w-2xl bg-black/50 p-8 md:p-12 rounded-lg">
+          <div className="max-w-2xl   p-8 md:p-12 rounded-lg">
             {/* Tagline */}
             <p className="text-white/90 text-lg md:text-xl mb-4 font-light italic">
               Get unforgettable pleasure with us
@@ -43,7 +46,7 @@ export default function HomeBanner() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/explore"
-                className="inline-flex items-center justify-center gap-2 bg-[#4A9EFF] hover:bg-[#3a8eef] text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 bg-[#1CA8CB] hover:bg-[#3a8eef] text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform  "
               >
                 Start Planning Your Trip
                 <ArrowRightOutlined className="text-sm" />
@@ -51,7 +54,7 @@ export default function HomeBanner() {
 
               <Link
                 href="/explore"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#4A9EFF] hover:bg-[#4A9EFF]/10 text-[#4A9EFF] font-medium px-8 py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 bg-white   hover:bg-white/70   font-medium px-8 py-4 rounded-lg transition-all duration-200 transform  "
               >
                 Explore Public Trips
                 <ArrowRightOutlined className="text-sm" />

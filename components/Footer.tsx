@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-[#1e293b] text-white">
@@ -6,19 +8,12 @@ export default function Footer() {
           {/* Explorer Circle */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="14" cy="14" r="13" fill="#4A9EFF" opacity="0.2" />
-                <path
-                  d="M14 7L15.875 11.5L20 13L15.875 14.5L14 19L12.125 14.5L8 13L12.125 11.5L14 7Z"
-                  fill="#4A9EFF"
-                />
-              </svg>
+              <Image
+                src="/logo/logo.png"
+                alt="Explorer Circle Logo"
+                width={28}
+                height={28}
+              />
               <span className="text-lg font-bold">Explorer Circle</span>
             </div>
             <p className="text-sm text-gray-300">
