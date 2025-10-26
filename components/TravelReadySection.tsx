@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import Image from "next/image";
-import travelReadyImage from "@/public/home/travelReady.png";
+import travelReadyImage from "../../public/home/travelReady.png";
 
 export default function TravelReadySection() {
   return (

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Image from "next/image";
-import homeBannerImage from "@/public/home/homeBanner.png";
+import homeBannerImage from "../../public/home/homeBanner.png";
 
 export default function HomeBanner() {
   return (
