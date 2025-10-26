@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Image from "next/image";
-import homeBannerImage from "../../public/home/homeBanner.png";
 
 export default function HomeBanner() {
   return (
@@ -11,7 +10,7 @@ export default function HomeBanner() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src={homeBannerImage}
+          src="/home/homeBanner.png"
           alt="Tropical Paradise"
           className="w-full h-full object-cover"
           width={2000}

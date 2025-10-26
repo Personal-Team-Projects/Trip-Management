@@ -7,7 +7,6 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import Image from "next/image";
-import travelReadyImage from "../../public/home/travelReady.png";
 
 export default function TravelReadySection() {
   return (
@@ -19,7 +18,7 @@ export default function TravelReadySection() {
             {/* Top Image */}
             <div className="absolute top-8 left-8  -transparent overflow-hidden   z-10 transform   transition-transform">
               <Image
-                src={travelReadyImage}
+                src="/home/travelReady.png"
                 alt="Mountain hiking"
                 className="w-full h-full object-cover"
                 width={654}
