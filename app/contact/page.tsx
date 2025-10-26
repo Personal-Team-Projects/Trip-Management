@@ -30,7 +30,6 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       <HeroSection title="Contact Us" breadcrumb="Home > Contact us" />
 
-      {/* Main Content */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
