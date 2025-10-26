@@ -50,32 +50,32 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="w-full bg-[#1E3A8A] py-20 px-6">
+    <div className="w-full  py-[100px] px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-[40px] font-bold text-[#113D48] mb-4 font-[Poppins]">
             Everything You Need to Plan Your Journey
           </h2>
-          <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-            Powerful tools to help you organize every aspect of your trip.
+          <p className="text-lg md:text-xl  max-w-3xl mx-auto text-[#717182]">
+            Powerful tools to help you organize every aspect of your trip
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white border border-[#0000001A] rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+              <div className="w-16 h-16 bg-[#1CA8CB] text-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
                 {feature.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-[22px] font-bold text-gray-800 mb-4">
                 {feature.title}
               </h3>
 

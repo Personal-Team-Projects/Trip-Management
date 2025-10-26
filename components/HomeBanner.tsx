@@ -23,8 +23,8 @@ export default function HomeBanner() {
 
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <div className="max-w-2xl   p-8 md:p-12 rounded-lg">
+        <div className="max-w-[1648px] mx-auto px-6 md:px-12 w-full">
+          <div className="max-w-[600px]   p-8 md:p-12 rounded-lg">
             {/* Tagline */}
             <p className="text-white/90 text-lg md:text-xl mb-4 font-light italic">
               Get unforgettable pleasure with us
@@ -45,7 +45,7 @@ export default function HomeBanner() {
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/explore"
+                href="/create-trip"
                 className="inline-flex items-center justify-center gap-2 bg-[#1CA8CB] hover:bg-[#3a8eef] text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform  "
               >
                 Start Planning Your Trip
