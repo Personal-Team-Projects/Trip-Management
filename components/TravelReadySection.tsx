@@ -30,7 +30,7 @@ export default function TravelReadySection() {
           {/* Middle - Text Content */}
           <div className=" ">
             <h2 className="text-4xl md:text-5xl  font-bold text-gray-800 leading-tight">
-              No matter where you're going, your trip is already ready!
+              No matter where you&apos;re going, your trip is already ready!
             </h2>
 
             <p className=" text-gray-600 leading-relaxed">

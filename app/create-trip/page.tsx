@@ -28,6 +28,11 @@ export default function CreateTripPage() {
     setMembers(members.filter((_, i) => i !== index));
   };
 
+  const parseCurrency = (value: string | undefined): number => {
+    const numStr = value!.replace(/\$\s?|(,*)/g, "");
+    return Number(numStr) || 0;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-6">
       <div className="max-w-6xl mx-auto">
@@ -173,15 +178,15 @@ export default function CreateTripPage() {
               ]}
             >
               <InputNumber
-                prefix="$"
                 className="w-full rounded-lg"
                 size="large"
                 min={0}
                 placeholder="0"
+                controls={true}
                 formatter={(value) =>
                   `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 }
-                parser={(value) => value!.replace(/\$\s?|(,*)/g, "")}
+                parser={parseCurrency as any}
               />
             </Form.Item>
 
